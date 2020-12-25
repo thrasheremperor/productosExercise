@@ -1,7 +1,6 @@
-const { fstat } = require("fs"); 
-let process=require('process');
-let onlineStore=require('./functions.js');
-let commands=process.argv[2];
+const process=require('process');
+const onlineStore=require('./functions.js');
+const commands=process.argv[2];
 
 switch(commands){
     case 'list':
@@ -23,7 +22,7 @@ switch(commands){
         let newPrice=process.argv[5];
         onlineStore.add(newID,newProduct,newPrice);
         return console.log("New item added!");
-    case 'filter':
+    case 'filterPrice':
         let min=process.argv[3];
         let max=process.argv[4];
         let product=onlineStore.categorize(min,max);
